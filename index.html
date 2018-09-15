@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            body{
+                width:910px;
+                padding:50px;
+                margin:auto;
+                margin-left: -20px;
+            }
+            .point{
+                display:inline-block;             
+                margin-left:-10px;
+                font-weight: bold;
+                font-family: Arial;
+            }
+            .point::before{
+                content:'__O_______________';
+
+
+            }
+            .val{
+                margin-top:-80px;
+                width:5em;;
+                -ms-transform: rotate(-45deg);
+                -webkit-transform: rotate(-45deg); /* Safari 3-8 */
+                transform: rotate(-45deg); 
+                font-size:1em;
+            }
+            #timeline{
+                padding-top:30px;               
+                width:300px;
+                height:100px;
+                white-space: nowrap;               
+                overflow:hidden;
+                float:left;
+                direction: rtl;
+            }
+            .val:hover{
+                background-color: lightblue;
+				color:red;
+            }
+            .point:hover { 
+                background-color: lightblue;
+                color:red;
+
+            }
+            #timeline a{
+                text-decoration: none;
+            }
+            #left, #right {
+                display:block;
+                float:left;
+                margin:100px;           
+                background-color: #fffff;
+                border:0;
+                font-weight: bold;
+                font-family: Arial;
+                font-size:1.2em;
+                cursor:pointer;
+            }
+
+        </style>
+
+    </head>
+    <body>
+   
+        
+        <span id="left">&lt;</span>
+        <div id="timeline">
+            <div  class="point"><div class="val"><a href="#">2018-06-30</a></div></div>
+            <div  class="point"><div class="val"><a href="#">2018-03-31</a></div></div>
+            <div  class="point"><div class="val"><a href="#">2017-12-31</a></div></div>
+            <div  class="point"><div class="val"><a href="#">2017-09-30</a></div></div>
+            <div  class="point"><div class="val"><a href="#">2017-06-30</a></div></div>
+            <div  class="point"><div class="val"><a href="#">2017-03-31</a></div></div>
+            <div  class="point"><div class="val"><a href="#">2016-12-31</a></div></div>
+
+        </div>
+        <span id="right">&gt;</span>
+        
+
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+                var button = document.getElementById('left');
+                button.onclick = function () {
+                    document.getElementById('timeline').scrollLeft += 20;
+                };
+            }, false);
+
+            document.addEventListener('DOMContentLoaded', function () {
+                var button = document.getElementById('right');
+                button.onclick = function () {
+                    document.getElementById('timeline').scrollLeft -= 20;
+                };
+            }, false);
+        </script>
+    </body>
+</html>
